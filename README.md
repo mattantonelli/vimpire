@@ -1,4 +1,4 @@
-## Vimpire: A collection of settings and plugins for vim.
+### Vimpire: A collection of VIM settings and themes.
 
 ### Plugins:
 * ctrlp
@@ -11,6 +11,7 @@
 * vim-rails
 * vim-ruby
 * vim-sensible
+* vim-perl
 
 ### Themes:
 * jellybeans.vim
