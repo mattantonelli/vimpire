@@ -15,3 +15,6 @@ set autoindent
 
 " NERDTree Settings
 let g:NERDTreeDirArrows=0
+
+" Color Scheme Settings
+colorscheme jellybeans
