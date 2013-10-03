@@ -1,4 +1,7 @@
-### Vimpire: A collection of VIM settings and themes.
+<img src="http://upload.wikimedia.org/wikipedia/commons/1/19/Bela_lugosi_dracula.jpg" />
+
+### Vimpire
+A collection of VIM settings and themes.
 
 ### Plugins:
 * ctrlp
