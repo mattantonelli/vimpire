@@ -2,11 +2,12 @@
 call pathogen#infect()
 
 " Setup some sane defaults for vim.
-set nocompatible      " We're running Vim, not Vi!
-syntax on             " Enable syntax highlighting
-filetype on           " Enable filetype detection
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific pluginsyntax enable
+set nocompatible
+syntax on
+filetype on
+filetype indent on
+filetype plugin on
+set number
 
 " Tab Settings
 set expandtab
