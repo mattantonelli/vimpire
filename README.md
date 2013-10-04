@@ -1,7 +1,7 @@
 <img src="http://upload.wikimedia.org/wikipedia/commons/1/19/Bela_lugosi_dracula.jpg" />
 
 ### Vimpire
-A collection of VIM settings and themes.
+A collection of VIM settings, plugins, and themes.
 
 ### Plugins:
 * ctrlp
@@ -21,7 +21,7 @@ A collection of VIM settings and themes.
 * molokai
 * vim-vividchalk
 
-### Installation:
+### Linux Installation:
 
 Back up your existing `.vimrc` and `.vim` directory if you have them:
 ```
