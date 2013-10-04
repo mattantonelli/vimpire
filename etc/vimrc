@@ -1,21 +1,43 @@
-" Turn on pathogen.
+" Turn off vi mode, we are using VIM!
+set nocompatible
+
+" Turn on pathogen, our plugin package manager.
 call pathogen#infect()
 
-" Setup some sane defaults for vim.
-set nocompatible
+" Turn on syntax highlighting.
 syntax on
+
+" Change to the correct indention and plugins dependent on the file type.
 filetype on
 filetype indent on
 filetype plugin on
+
+" Turn on line numbers.
 set number
 
+" Turn on the visual bell.
+set visualbell
+set noerrorbells
+
 " Tab Settings
-set expandtab
-set tabstop=2 shiftwidth=2 softtabstop=2
 set autoindent
+set smartindent
+set smarttab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+set expandtab
 
 " NERDTree Settings
-let g:NERDTreeDirArrows=0
+let NERDTreeMinimalUI  = 1
+let NERDTreeDirArrows  = 0
+let g:NERDTreeWinSize  = 30
+let NERDTreeQuitOnOpen = 1
+map <C-n> :NERDTreeToggle<CR>
 
-" Color Scheme Settings
+" Configure how vim looks.
 colorscheme jellybeans
+
+if has("win32")
+  set guifont=Consolas:h10:cANSI
+endif
