@@ -45,4 +45,3 @@ cp ~/.vim/etc/vimrc ~/.vimrc
 ```
 
 Run vim! :imp:
-:q
