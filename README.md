@@ -6,6 +6,11 @@ A collection of VIM settings, plugins, and themes.
 ### Plugins:
 * ctrlp
 * NERDTree
+* vim-easymotion
+* vim-snipmate
+  * vim-tlib
+  * vim-addons-mw-utils
+  * vim-snippets
 * vim-airline
 * vim-fugitive
 * vim-gitgutter
@@ -20,6 +25,7 @@ A collection of VIM settings, plugins, and themes.
 * jellybeans.vim
 * molokai
 * vim-vividchalk
+* ir_black
 
 ### Linux Installation:
 
@@ -39,3 +45,4 @@ cp ~/.vim/etc/vimrc ~/.vimrc
 ```
 
 Run vim! :imp:
+:q
