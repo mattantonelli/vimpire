@@ -1,6 +1,6 @@
 <img src="http://upload.wikimedia.org/wikipedia/commons/1/19/Bela_lugosi_dracula.jpg" />
 
-### Vimpire
+## Vimpire
 A collection of VIM settings, plugins, and themes.
 
 ### Plugins:
