@@ -40,4 +40,7 @@ colorscheme jellybeans
 
 if has("win32")
   set guifont=Consolas:h10:cANSI
+  set guioptions-=m
+  set guioptions-=T
+  set guioptions-=r
 endif
