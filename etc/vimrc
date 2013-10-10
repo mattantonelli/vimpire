@@ -23,10 +23,17 @@ set noerrorbells
 set autoindent
 set smartindent
 set smarttab
+set expandtab
+
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
-set expandtab
+
+" Allow for cursor beyond last character.
+set virtualedit=onemore
+
+" Store more history!
+set history=1000
 
 " NERDTree Settings
 let NERDTreeMinimalUI  = 1
@@ -38,9 +45,26 @@ map <C-n> :NERDTreeToggle<CR>
 " Configure how vim looks.
 colorscheme jellybeans
 
-if has("win32")
-  set guifont=Consolas:h10:cANSI
+if has('gui_running')
+  " Turn off the menu, tool, and scroll bar.
   set guioptions-=m
   set guioptions-=T
+  set guioptions-=L
+  set guioptions-=l
   set guioptions-=r
+  set guioptions-=R
+
+  " Increase the starting size of the editor.
+  set lines=40
+  set columns=100
+
+  " Make NERDTree look nice when using a GUI.
+  let NERDTreeDirArrows = 1
+
+  " Set up some decent fonts.
+  if has("gui_win32")
+    set guifont=Consolas:h10:cANSI
+  elseif has("gui_mac")
+    set guifont=Menlo\ Regular:h15
+  endif
 endif
