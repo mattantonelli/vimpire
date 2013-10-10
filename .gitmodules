@@ -58,3 +58,6 @@
 [submodule "bundle/ir_black"]
 	path = bundle/ir_black
 	url = https://github.com/twerth/ir_black.git
+[submodule "bundle/vim-puppet"]
+	path = bundle/vim-puppet
+	url = https://github.com/rodjek/vim-puppet.git
