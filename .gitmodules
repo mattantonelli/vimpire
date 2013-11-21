@@ -12,7 +12,7 @@
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule "bundle/vim-sensible"]
 	path = bundle/vim-sensible
-	url = git://github.com/tpope/vim-sensible.git
+	url = git://github.com/ATNI/vim-sensible.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
