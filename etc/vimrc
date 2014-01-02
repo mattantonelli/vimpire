@@ -3,6 +3,8 @@ set nocompatible
 
 " Turn on pathogen, our plugin package manager.
 call pathogen#infect()
+" Run helptags to load docs from all the bundles.
+Helptags
 
 " Turn on syntax highlighting.
 syntax on
@@ -42,9 +44,15 @@ let g:NERDTreeWinSize  = 30
 let NERDTreeQuitOnOpen = 1
 map <C-n> :NERDTreeToggle<CR>
 
+" Configure wildignore
+set wildignore+=*.gz
+" Don't load test records if they are in a project.
+set wildignore+=*/test-records/*
+
 " Configure how vim looks.
 colorscheme jellybeans
 
+" Make the GUI nice.
 if has('gui_running')
   " Turn off the menu, tool, and scroll bar.
   set guioptions-=m
