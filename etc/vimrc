@@ -31,11 +31,45 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 
+" remap the leader key
+let mapleader=','
+
+" remap ESC
+inoremap jj <ESC>
+
 " Allow for cursor beyond last character.
 set virtualedit=onemore
 
 " Store more history!
 set history=1000
+
+" Configure wildignore
+set wildignore+=*.gz,*.swp,*.bak,*.pyc,*.class
+" Don't load test records if they are in a project.
+set wildignore+=*/test-records/*
+
+" smart case-sensitive searching
+set ignorecase
+set smartcase
+
+" tired of hitting F1 accidentally?
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" ,W to strip all trailing whitespace in the current file
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
+" a shortcut to Ack
+nnoremap <leader>a :Ack
+
+" Configure how vim looks.
+set cursorline
+colorscheme jellybeans
+
+" quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " NERDTree Settings
 let NERDTreeMinimalUI  = 1
@@ -43,14 +77,6 @@ let NERDTreeDirArrows  = 0
 let g:NERDTreeWinSize  = 30
 let NERDTreeQuitOnOpen = 1
 map <C-n> :NERDTreeToggle<CR>
-
-" Configure wildignore
-set wildignore+=*.gz
-" Don't load test records if they are in a project.
-set wildignore+=*/test-records/*
-
-" Configure how vim looks.
-colorscheme jellybeans
 
 " Make the GUI nice.
 if has('gui_running')
