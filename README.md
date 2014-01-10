@@ -1,47 +1,70 @@
 <img src="http://upload.wikimedia.org/wikipedia/commons/1/19/Bela_lugosi_dracula.jpg" />
 
 ## Vimpire
-A collection of VIM settings, plugins, and themes.
+A curated collection of Vim settings, plugins, and themes.
+
+*Tested using Vim 7.4 - Huge*
 
 ### Plugins:
-* ctrlp
+* ack.vim
+* ctrlp.vim
 * NERDTree
-* vim-easymotion
-* vim-snipmate
-  * vim-tlib
-  * vim-addons-mw-utils
-  * vim-snippets
 * vim-airline
+* vim-easymotion
 * vim-fugitive
 * vim-gitgutter
 * vim-haml
+* vim-javascript-syntax
 * vim-markdown
+* vim-perl
+* vim-puppet
 * vim-rails
 * vim-ruby
 * vim-sensible
-* vim-perl
+* vim-snipmate
+  * vim-tlib
+  * vim-addons-mw-utils
+* vim-snippets
+* vim-surround
 
 ### Themes:
-* jellybeans.vim
+* jellybeans.vim (the default theme)
+* ir_black
 * molokai
 * vim-vividchalk
-* ir_black
 
 ### Linux Installation:
 
 Back up your existing `.vimrc` and `.vim` directory if you have them:
-```
+```bash
 mv ~/.vimrc ~/.vimrc-backup && mv ~/.vim ~/.vim-backup
 ```
 
 Clone the repository:
-```
+```bash
 git clone --recursive https://github.com/ATNI/vimpire.git ~/.vim
 ```
 
 Copy the Vimpire vimrc file into place:
-```
+```bash
 cp ~/.vim/etc/vimrc ~/.vimrc
 ```
 
 Run vim! :imp:
+
+### Upgrading Vimpire:
+
+Enter your `.vim` directory:
+```bash
+cd ~/.vim
+```
+
+Download the latest Vimpire code:
+```bash
+git pull && gitsubmodule init && git submodule update
+```
+
+Copy over the new `.vimrc` *(careful if you've made any changes to your `.vimrc`)*
+```bash
+cp ~/.vim/etc/vimrc ~/.vimrc
+```
