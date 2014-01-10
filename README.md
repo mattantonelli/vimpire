@@ -1,7 +1,7 @@
 <img src="http://upload.wikimedia.org/wikipedia/commons/1/19/Bela_lugosi_dracula.jpg" />
 
 ## Vimpire
-A curated collection of Vim settings, plugins, and themes.
+A curated collection of Vim settings, plugins, and themes. :imp:
 
 *Tested using Vim 7.4 - Huge*
 
@@ -28,7 +28,7 @@ A curated collection of Vim settings, plugins, and themes.
 * vim-surround
 
 ### Themes:
-* jellybeans.vim (the default theme)
+* jellybeans.vim - *default theme*
 * ir_black
 * molokai
 * vim-vividchalk
@@ -50,8 +50,6 @@ Copy the Vimpire vimrc file into place:
 cp ~/.vim/etc/vimrc ~/.vimrc
 ```
 
-Run vim! :imp:
-
 ### Upgrading Vimpire:
 
 Enter your `.vim` directory:
@@ -61,7 +59,7 @@ cd ~/.vim
 
 Download the latest Vimpire code:
 ```bash
-git pull && gitsubmodule init && git submodule update
+git pull && git submodule init && git submodule update
 ```
 
 Copy over the new `.vimrc` *(careful if you've made any changes to your `.vimrc`)*
