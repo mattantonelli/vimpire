@@ -31,12 +31,6 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 
-" remap the leader key
-let mapleader=','
-
-" remap ESC
-inoremap jj <ESC>
-
 " Allow for cursor beyond last character.
 set virtualedit=onemore
 
@@ -52,24 +46,52 @@ set wildignore+=*/test-records/*
 set ignorecase
 set smartcase
 
+" Configure how vim looks.
+set cursorline
+colorscheme jellybeans
+
+" remap the leader key
+let mapleader=','
+
+" remap ESC
+inoremap jj <ESC>
+
+" a few emacs keybindings while in insert mode
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+inoremap <C-p> <Up>
+inoremap <C-n> <Down>
+
 " tired of hitting F1 accidentally?
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-" ,W to strip all trailing whitespace in the current file
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+" strip all trailing whitespace in the current file
+nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
+
+" indent the whole file and return to the current line
+nnoremap <leader>i gg=G''
 
 " a shortcut to Ack
 nnoremap <leader>a :Ack
 
-" Configure how vim looks.
-set cursorline
-colorscheme jellybeans
-
 " quickly edit/reload the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>ev :vsplit<CR><C-w><C-w>:e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" shortcuts for opening new split windows
+nmap <silent> <leader>h :split<CR><C-w><C-w>
+nmap <silent> <leader>v :vsplit<CR><C-w><C-w>
+nmap <silent> <leader>q :q<CR>
+
+" F11 to toggle between 'paste' and 'nopaste'
+set pastetoggle=<F11>
+
+" Map Y to yank until EOL
+map Y y$
 
 " NERDTree Settings
 let NERDTreeMinimalUI  = 1
