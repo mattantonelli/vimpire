@@ -46,13 +46,6 @@ set wildignore+=*/test-records/*
 set ignorecase
 set smartcase
 
-" Configure how vim looks.
-set cursorline
-colorscheme jellybeans
-
-" remap the leader key
-let mapleader=','
-
 " remap ESC
 inoremap jj <ESC>
 
@@ -64,41 +57,70 @@ inoremap <C-b> <Left>
 inoremap <C-p> <Up>
 inoremap <C-n> <Down>
 
-" tired of hitting F1 accidentally?
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
+" Wrapped lines go to next row not next line in file
+noremap j gj
+noremap k gk
 
-" strip all trailing whitespace in the current file
+" Remap the leader key
+let mapleader=','
+"
+" Strip all trailing whitespace in the current file
 nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 
-" indent the whole file and return to the current line
+" Indent the whole file and return to the current line
 nnoremap <leader>i gg=G''
 
-" a shortcut to Ack
+" Run Ack
 nnoremap <leader>a :Ack
 
-" quickly edit/reload the vimrc file
+" Generate ctags
+nnoremap <silent> <leader>t :silent !ctags -R .<CR><C-l>
+
+" CtrlP shortcuts
+nnoremap <silent> <leader>p :CtrlP<CR>
+nnoremap <silent> <leader>P :CtrlPTag<CR>
+
+" Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :vsplit<CR><C-w><C-w>:e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-" shortcuts for opening new split windows
+" Shortcuts for opening new split windows
 nmap <silent> <leader>h :split<CR><C-w><C-w>
 nmap <silent> <leader>v :vsplit<CR><C-w><C-w>
 nmap <silent> <leader>q :q<CR>
 
-" F11 to toggle between 'paste' and 'nopaste'
-set pastetoggle=<F11>
+" Shortcut to reloading last buffer
+nmap <silent> <leader>b :b#<CR>
 
 " Map Y to yank until EOL
 map Y y$
+
+" Tired of hitting F1 accidentally?
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" Toggle highlighting the current line and column.
+nnoremap <silent> <F10> :set cursorline!<CR>:set cursorcolumn!<CR>
+
+" F11 to toggle between 'paste' and 'nopaste' in insert mode
+set pastetoggle=<F11>
+
+" F12 to toggle line numbers and git-gutter
+nnoremap <silent> <F12> :set nonumber!<CR>:GitGutterToggle<CR>
 
 " NERDTree Settings
 let NERDTreeMinimalUI  = 1
 let NERDTreeDirArrows  = 0
 let g:NERDTreeWinSize  = 30
 let NERDTreeQuitOnOpen = 1
-map <C-n> :NERDTreeToggle<CR>
+map <silent> <C-n> :NERDTreeToggle<CR>
+
+" CtrlP Settings
+let g:ctrlp_custom_ignore = 'tags'
+
+" Configure how vim looks.
+colorscheme jellybeans
 
 " Make the GUI nice.
 if has('gui_running')
@@ -117,10 +139,13 @@ if has('gui_running')
   " Make NERDTree look nice when using a GUI.
   let NERDTreeDirArrows = 1
 
+  " Default to line and column highlighting.
+  set cursorline cursorcolumn
+
   " Set up some decent fonts.
   if has("gui_win32")
     set guifont=Consolas:h10:cANSI
-  elseif has("gui_macvim")
+  elseif has("gui_mac")
     set guifont=Menlo\ Regular:h15
   endif
 endif
