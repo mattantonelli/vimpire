@@ -64,8 +64,8 @@ noremap k gk
 " Remap the leader key
 let mapleader=','
 "
-" Strip all trailing whitespace in the current file
-nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
+" Set up extra whitespace detection and stripping.
+nnoremap <silent> <leader>W :StripWhitespace<CR>
 
 " Indent the whole file and return to the current line
 nnoremap <leader>i gg=G''
@@ -81,19 +81,20 @@ nnoremap <silent> <leader>p :CtrlP<CR>
 nnoremap <silent> <leader>P :CtrlPTag<CR>
 
 " Quickly edit/reload the vimrc file
-nmap <silent> <leader>ev :vsplit<CR><C-w><C-w>:e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nnoremap <silent> <leader>ev  :e $MYVIMRC<CR>
+nnoremap <silent> <leader>esv :vsplit<CR><C-w><C-w>:e $MYVIMRC<CR>
+nnoremap <silent> <leader>sv  :so $MYVIMRC<CR>
 
 " Shortcuts for opening new split windows
-nmap <silent> <leader>h :split<CR><C-w><C-w>
-nmap <silent> <leader>v :vsplit<CR><C-w><C-w>
-nmap <silent> <leader>q :q<CR>
+nnoremap <silent> <leader>h :split<CR><C-w><C-w>
+nnoremap <silent> <leader>v :vsplit<CR><C-w><C-w>
+nnoremap <silent> <leader>q :q<CR>
 
 " Shortcut to reloading last buffer
-nmap <silent> <leader>b :b#<CR>
+nnoremap <silent> <leader>b :b#<CR>
 
 " Map Y to yank until EOL
-map Y y$
+nnoremap Y y$
 
 " Tired of hitting F1 accidentally?
 inoremap <F1> <ESC>
