@@ -45,9 +45,14 @@ Clone the repository:
 git clone --recursive https://github.com/ATNI/vimpire.git ~/.vim
 ```
 
-Copy the Vimpire vimrc file into place:
+Symlink the Vimpire vimrc file into place:
 ```bash
-cp ~/.vim/etc/vimrc ~/.vimrc
+ln -s ~/.vim/etc/vimrc ~/.vimrc
+```
+
+If you need to customize, you can create your own personal vimrc that will be loaded last:
+```bash
+vim ~/.personal.vimrc
 ```
 
 ### Upgrading Vimpire:
@@ -60,9 +65,4 @@ cd ~/.vim
 Download the latest Vimpire code:
 ```bash
 git pull && git submodule init && git submodule update
-```
-
-Copy over the new `.vimrc` *(careful if you've made any changes to your `.vimrc`)*
-```bash
-cp ~/.vim/etc/vimrc ~/.vimrc
 ```

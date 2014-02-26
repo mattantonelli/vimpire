@@ -39,8 +39,6 @@ set history=1000
 
 " Configure wildignore
 set wildignore+=*.gz,*.swp,*.bak,*.pyc,*.class
-" Don't load test records if they are in a project.
-set wildignore+=*/test-records/*
 
 " smart case-sensitive searching
 set ignorecase
@@ -154,4 +152,10 @@ if has('gui_running')
   elseif has("gui_mac")
     set guifont=Menlo\ Regular:h15
   endif
+endif
+
+" Load a personal vimrc if one exists.
+let s:personalrc = expand($HOME . '/.personal.vimrc')
+if filereadable(s:personalrc)
+  exec ':so ' . s:personalrc
 endif
