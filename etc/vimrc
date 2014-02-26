@@ -68,7 +68,7 @@ let mapleader=','
 nnoremap <silent> <leader>W :StripWhitespace<CR>
 
 " Indent the whole file and return to the current line
-nnoremap <leader>i gg=G''
+nnoremap <silent> <leader>i gg=G''
 
 " Run Ack
 nnoremap <leader>a :Ack
@@ -88,10 +88,15 @@ nnoremap <silent> <leader>sv  :so $MYVIMRC<CR>
 " Shortcuts for opening new split windows
 nnoremap <silent> <leader>h :split<CR><C-w><C-w>
 nnoremap <silent> <leader>v :vsplit<CR><C-w><C-w>
+nnoremap <silent> <leader>w <C-w><C-w>
 nnoremap <silent> <leader>q :q<CR>
 
 " Shortcut to reloading last buffer
 nnoremap <silent> <leader>b :b#<CR>
+
+" Insert blank line below without leaving normal mode
+nnoremap <silent> <leader>o o<ESC>
+nnoremap <silent> <leader>O O<ESC>
 
 " Map Y to yank until EOL
 nnoremap Y y$
