@@ -88,11 +88,12 @@ nnoremap <silent> <leader>h :split<CR><C-w><C-w>
 nnoremap <silent> <leader>v :vsplit<CR><C-w><C-w>
 nnoremap <silent> <leader>w <C-w><C-w>
 nnoremap <silent> <leader>q :q<CR>
+nnoremap <silent> <leader>Q :q!<CR>
 
 " Shortcut to reloading last buffer
 nnoremap <silent> <leader>b :b#<CR>
 
-" Insert blank line below without leaving normal mode
+" Insert blank line below or above without leaving normal mode
 nnoremap <silent> <leader>o o<ESC>
 nnoremap <silent> <leader>O O<ESC>
 
