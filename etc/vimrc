@@ -72,7 +72,7 @@ nnoremap <silent> <leader>i gg=G''
 nnoremap <leader>a :Ack
 
 " Generate ctags
-nnoremap <silent> <leader>t :silent !ctags -R .<CR><C-l>
+nnoremap <silent> <leader>t :silent !ctags -R --exclude=.git .<CR><C-l>
 
 " CtrlP shortcuts
 nnoremap <silent> <leader>p :CtrlP<CR>
