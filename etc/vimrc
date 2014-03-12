@@ -155,6 +155,11 @@ if has('gui_running')
   endif
 endif
 
+" If tmux or screen is being used, default to 256 colors.
+if &term == "screen"
+  set t_Co=256
+end
+
 " Don't allow gitgutter eager loading if we are using an old version of vim.
 if !exists("*gettabvar")
   let g:gitgutter_eager = 0
