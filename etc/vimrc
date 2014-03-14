@@ -124,6 +124,9 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 " CtrlP Settings
 let g:ctrlp_custom_ignore = 'tags'
 
+" Syntastic Settings
+let g:syntastic_ruby_checkers = ['mri']
+
 " Configure how vim looks.
 colorscheme jellybeans
 
