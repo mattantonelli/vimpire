@@ -158,6 +158,11 @@ if has('gui_running')
   endif
 endif
 
+" If tmux or screen is being used, default to 256 colors.
+if &term == "screen"
+  set t_Co=256
+end
+
 " Load a personal vimrc if one exists.
 let s:personalrc = expand($HOME . '/.personal.vimrc')
 if filereadable(s:personalrc)
