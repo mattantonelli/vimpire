@@ -9,7 +9,9 @@ A curated collection of Vim settings, plugins, and themes. :imp:
 * ack.vim
 * ctrlp.vim
 * NERDTree
+* syntastic
 * vim-airline
+* vim-better-whitespace
 * vim-easymotion
 * vim-fugitive
 * vim-gitgutter
