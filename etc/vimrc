@@ -158,11 +158,6 @@ if has('gui_running')
   endif
 endif
 
-" Don't allow gitgutter eager loading if we are using an old version of vim.
-if !exists("*gettabvar")
-  let g:gitgutter_eager = 0
-endif
-
 " Load a personal vimrc if one exists.
 let s:personalrc = expand($HOME . '/.personal.vimrc')
 if filereadable(s:personalrc)
