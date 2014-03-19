@@ -69,7 +69,7 @@ nnoremap <silent> <leader>W :StripWhitespace<CR>
 nnoremap <silent> <leader>i gg=G''
 
 " Run Ack
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack<space>
 
 " Generate ctags
 nnoremap <silent> <leader>t :silent !ctags -R --exclude=.git .<CR><C-l>
@@ -119,7 +119,7 @@ let NERDTreeMinimalUI  = 1
 let NERDTreeDirArrows  = 0
 let g:NERDTreeWinSize  = 30
 let NERDTreeQuitOnOpen = 1
-map <silent> <C-n> :NERDTreeToggle<CR>
+nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 " CtrlP Settings
 let g:ctrlp_custom_ignore = 'tags'
