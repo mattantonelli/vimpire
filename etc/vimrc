@@ -56,8 +56,8 @@ inoremap <C-p> <Up>
 inoremap <C-n> <Down>
 
 " Wrapped lines go to next row not next line in file
-noremap j gj
-noremap k gk
+noremap <silent> j gj
+noremap <silent> k gk
 
 " Remap the leader key
 let mapleader=','
