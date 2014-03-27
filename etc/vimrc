@@ -100,6 +100,15 @@ nnoremap <silent> <leader>b :b#<CR>
 nnoremap <silent> <leader>o o<ESC>
 nnoremap <silent> <leader>O O<ESC>
 
+" Fugitive shortcuts
+nnoremap <leader>G :Git<space>
+nnoremap <silent> <leader>gl :Glog<CR>
+nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gr :Gread<CR>
+
 " Map Y to yank until EOL
 nnoremap Y y$
 
