@@ -139,6 +139,12 @@ let g:ctrlp_custom_ignore = 'tags'
 " Syntastic Settings
 let g:syntastic_ruby_checkers = ['mri']
 
+" vim-rspec Settings
+nnoremap <silent> <leader>Tt :call RunCurrentSpecFile()<CR>
+nnoremap <silent> <leader>Ts :call RunNearestSpec()<CR>
+nnoremap <silent> <leader>Tl :call RunLastSpec()<CR>
+nnoremap <silent> <leader>Ta :call RunAllSpecs()<CR>
+
 " Configure how vim looks.
 colorscheme jellybeans
 
