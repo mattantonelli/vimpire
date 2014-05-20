@@ -81,6 +81,9 @@ nnoremap <silent> <leader>t :silent !ctags -R --exclude=.git .<CR><C-l>
 nnoremap <silent> <leader>p :CtrlP<CR>
 nnoremap <silent> <leader>P :CtrlPTag<CR>
 
+" Faster mapping for omni-completion
+inoremap <silent> <leader><Space> <C-x><C-o>
+
 " Quickly edit/reload the vimrc file
 nnoremap <silent> <leader>ev  :e $MYVIMRC<CR>
 nnoremap <silent> <leader>esv :vsplit<CR><C-w><C-w>:e $MYVIMRC<CR>
