@@ -40,6 +40,9 @@ set history=1000
 " Configure wildignore
 set wildignore+=*.gz,*.swp,*.bak,*.pyc,*.class
 
+" When we turn on set list, we want to see these types of whitespace:
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
 " smart case-sensitive searching
 set ignorecase
 set smartcase
@@ -84,6 +87,9 @@ nnoremap <silent> <leader>t :silent !ctags -R --exclude=.git .<CR><C-l>
 nnoremap <silent> <leader>p :CtrlP<CR>
 nnoremap <silent> <leader>P :CtrlPTag<CR>
 
+" Faster mapping for omni-completion
+inoremap <silent> <leader><leader><leader> <C-x><C-o>
+
 " Quickly edit/reload the vimrc file
 nnoremap <silent> <leader>ev  :e $MYVIMRC<CR>
 nnoremap <silent> <leader>esv :vsplit<CR><C-w><C-w>:e $MYVIMRC<CR>
@@ -119,6 +125,9 @@ nnoremap Y y$
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+
+" Toggle list (display unprintable characters)
+nnoremap <silent> <F9> :set list!<CR>
 
 " Toggle highlighting the current line and column.
 nnoremap <silent> <F10> :set cursorline!<CR>:set cursorcolumn!<CR>
