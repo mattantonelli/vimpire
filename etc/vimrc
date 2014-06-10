@@ -62,6 +62,9 @@ noremap <silent> k gk
 " Remap the leader key
 let mapleader=','
 
+" Use \ to repeat find backwards.
+nnoremap <silent> \ ,
+
 " Save using sudo shortcut.
 cnoremap <silent> W :silent w !sudo tee % > /dev/null<CR>:edit!<CR>
 
