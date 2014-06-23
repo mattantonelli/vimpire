@@ -78,7 +78,8 @@ nnoremap <silent> <leader>W :StripWhitespace<CR>
 nnoremap <silent> <leader>i gg=G''
 
 " Run Ack
-nnoremap <leader>a :Ack<space>
+nnoremap <leader>a :Ack!<space>
+let g:ackhighlight = 1
 
 " Generate ctags
 nnoremap <silent> <leader>t :silent !ctags -R --exclude=.git .<CR><C-l>
