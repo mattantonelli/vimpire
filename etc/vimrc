@@ -126,17 +126,17 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-" Toggle list (display unprintable characters)
+" F7 to toggle between 'paste' and 'nopaste' in insert mode
+set pastetoggle=<F7>
+
+" F8 to toggle line numbers and git-gutter
+nnoremap <silent> <F8> :set nonumber!<CR>:GitGutterToggle<CR>
+
+" F9 to Toggle list (display unprintable characters)
 nnoremap <silent> <F9> :set list!<CR>
 
-" Toggle highlighting the current line and column.
+" F10 to Toggle highlighting the current line and column.
 nnoremap <silent> <F10> :set cursorline!<CR>:set cursorcolumn!<CR>
-
-" F11 to toggle between 'paste' and 'nopaste' in insert mode
-set pastetoggle=<F11>
-
-" F12 to toggle line numbers and git-gutter
-nnoremap <silent> <F12> :set nonumber!<CR>:GitGutterToggle<CR>
 
 " NERDTree Settings
 let NERDTreeMinimalUI  = 1
@@ -156,6 +156,22 @@ nnoremap <silent> <leader>Tt :call RunCurrentSpecFile()<CR>
 nnoremap <silent> <leader>Ts :call RunNearestSpec()<CR>
 nnoremap <silent> <leader>Tl :call RunLastSpec()<CR>
 nnoremap <silent> <leader>Ta :call RunAllSpecs()<CR>
+
+" Persistent Undo
+if has('persistent_undo')
+  set undodir=~/.vim/undo//
+  set undofile
+  set undolevels=1000
+  set undoreload=10000
+endif
+
+" Put swap files in one location
+set directory=~/.vim/swap//
+
+" Put all the backup files in one location
+set backup
+set writebackup
+set directory=~/.vim/backup//
 
 " Configure how vim looks.
 colorscheme jellybeans
