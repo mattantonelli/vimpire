@@ -172,8 +172,8 @@ set directory=~/.vim/swap//
 " Put all the backup files in one location
 set backup
 set writebackup
-set directory-=.
-set directory=~/.vim/backup//
+set backupdir-=.
+set backupdir=~/.vim/backup//
 
 " Configure how vim looks.
 colorscheme jellybeans
