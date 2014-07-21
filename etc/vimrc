@@ -52,6 +52,12 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set ignorecase
 set smartcase
 
+" allow unsaved background buffers
+set hidden
+
+" auto-load files changed outside of vim
+set autoread
+
 " remap ESC
 inoremap jj <ESC>
 
@@ -74,7 +80,8 @@ let mapleader=','
 nnoremap <silent> \ ,
 
 " Save using sudo shortcut.
-cnoremap <silent> W :silent w !sudo tee % > /dev/null<CR>:edit!<CR>
+" cnoremap <silent> W :silent w !sudo tee % > /dev/null<CR>:edit!<CR>
+cnoremap <silent> W :SudoWrite<CR>
 
 " Set up extra whitespace detection and stripping.
 nnoremap <silent> <leader>W :StripWhitespace<CR>
@@ -82,7 +89,7 @@ nnoremap <silent> <leader>W :StripWhitespace<CR>
 " Indent the whole file and return to the current line
 nnoremap <silent> <leader>i gg=G''
 
-" Run Ack
+" Ack settings
 nnoremap <leader>a :Ack!<space>
 let g:ackhighlight = 1
 
@@ -100,6 +107,12 @@ inoremap <silent> <leader><leader><leader> <C-x><C-o>
 nnoremap <silent> <leader>ev  :e $MYVIMRC<CR>
 nnoremap <silent> <leader>esv :vsplit<CR><C-w><C-w>:e $MYVIMRC<CR>
 nnoremap <silent> <leader>sv  :so $MYVIMRC<CR>
+
+" Shortcuts for moving around split windows
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
 " Shortcuts for opening new split windows
 nnoremap <silent> <leader>h :split<CR><C-w><C-w>
