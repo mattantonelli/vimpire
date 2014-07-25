@@ -1,11 +1,6 @@
 " Turn off vi mode, we are using VIM!
 set nocompatible
 
-" Don't load easymotion if we are using an old version of vim.
-if version < 703
-  let g:pathogen_disabled = ['vim-easymotion']
-endif
-
 " Turn on pathogen, our plugin package manager.
 call pathogen#infect()
 " Run helptags to load docs from all the bundles.
