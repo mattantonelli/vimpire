@@ -82,7 +82,6 @@ let mapleader=','
 nnoremap <silent> \ ,
 
 " Save using sudo shortcut.
-" cnoremap <silent> W :silent w !sudo tee % > /dev/null<CR>:edit!<CR>
 cnoremap <silent> W :SudoWrite<CR>
 
 " Set up extra whitespace detection and stripping.
