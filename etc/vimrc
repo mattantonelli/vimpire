@@ -47,22 +47,29 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set ignorecase
 set smartcase
 
-" allow unsaved background buffers
-set hidden
-
 " auto-load files changed outside of vim
 set autoread
 
 " remap ESC
 inoremap jj <ESC>
 
-" a few emacs keybindings while in insert mode
+" readline keybindings while in insert mode
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 inoremap <C-p> <Up>
 inoremap <C-n> <Down>
+inoremap <C-d> <Del>
+
+" and command mode
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-f> <Right>
+cnoremap <C-b> <Left>
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-d> <Del>
 
 " Wrapped lines go to next row not next line in file
 noremap <silent> j gj
@@ -114,7 +121,7 @@ if executable('ag')
 endif
 
 " Faster mapping for omni-completion
-inoremap <silent> <leader><leader><leader> <C-x><C-o>
+inoremap <silent> <S-Tab> <C-x><C-o>
 
 " Quickly edit/reload the vimrc file
 nnoremap <silent> <leader>ev  :e $MYVIMRC<CR>
