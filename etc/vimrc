@@ -128,10 +128,10 @@ nnoremap <silent> <leader>esv :vsplit<CR><C-w><C-w>:e $MYVIMRC<CR>
 nnoremap <silent> <leader>sv  :so $MYVIMRC<CR>
 
 " Shortcuts for moving around split windows
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Shortcuts for opening new split windows
 nnoremap <silent> <leader>h :split<CR><C-w><C-w>
@@ -233,8 +233,8 @@ if has('gui_running')
   set guioptions-=R
 
   " Increase the starting size of the editor.
-  set lines=40
-  set columns=100
+  set lines=50
+  set columns=140
 
   " Make NERDTree look nice when using a GUI.
   let NERDTreeDirArrows = 1
@@ -245,8 +245,9 @@ if has('gui_running')
   " Set up some decent fonts.
   if has("gui_win32")
     set guifont=Consolas:h10:cANSI
-  elseif has("gui_mac")
-    set guifont=Menlo\ Regular:h15
+  elseif has("gui_macvim")
+    " set guifont=Menlo Regular:h15
+    set guifont=Source\ Code\ Pro:h14
   endif
 endif
 
