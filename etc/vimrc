@@ -38,7 +38,7 @@ set virtualedit=onemore
 set history=1000
 
 " Configure wildignore
-set wildignore+=*.gz,*.swp,*.bak,*.pyc,*.class
+set wildignore+=*/tmp/*,*.so,*.gz,*.swp,*.bak,*.pyc,*.class
 
 " When we turn on set list, we want to see these types of whitespace:
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
@@ -86,14 +86,29 @@ nnoremap <silent> <leader>i gg=G''
 
 " Ack settings
 nnoremap <leader>a :Ack!<space>
-let g:ackhighlight = 1
+let g:ackhighlight=1
+
+" Ag settings
+nnoremap <leader>A :Ag!<space>
+let g:aghighlight=1
 
 " Generate ctags
 nnoremap <silent> <leader>t :silent !ctags -R --exclude=.git .<CR><C-l>
 
-" CtrlP shortcuts
+" CtrlP shortcuts and settings
 nnoremap <silent> <leader>p :CtrlP<CR>
 nnoremap <silent> <leader>P :CtrlPTag<CR>
+
+" Set up The Silver Searcher
+if executable('ag')
+  " use ag instead of grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " use ag for CtrlP
+  let g:ctrlp_user_command='ag %s -l --nocolor -g ""'
+  " ag is fast enough that we don't need the CtrlP cache
+  let g:ctrlp_use_caching=0
+endif
 
 " Faster mapping for omni-completion
 inoremap <silent> <leader><leader><leader> <C-x><C-o>
@@ -190,6 +205,13 @@ set backupdir=~/.vim/backup//
 
 " Configure how vim looks.
 colorscheme jellybeans
+
+" vim-ruby settings
+let ruby_operators=1
+let g:rubycomplete_buffer_loading=1
+let g:rubycomplete_classes_in_global=1
+let g:rubycomplete_rails=1
+let g:rubycomplete_load_gemfile=1
 
 " Make the GUI nice.
 if has('gui_running')
