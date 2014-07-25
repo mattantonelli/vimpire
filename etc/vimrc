@@ -84,6 +84,9 @@ nnoremap <silent> <leader>W :StripWhitespace<CR>
 " Indent the whole file and return to the current line
 nnoremap <silent> <leader>i gg=G''
 
+" grep the word under the cursor.
+nnoremap <silent> <leader>* :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
 " Ack settings
 nnoremap <leader>a :Ack!<space>
 let g:ackhighlight=1
