@@ -94,3 +94,9 @@
 [submodule "bundle/vim-endwise"]
 	path = bundle/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
+[submodule "bundle/vim-projectionist"]
+	path = bundle/vim-projectionist
+	url = https://github.com/tpope/vim-projectionist.git
+[submodule "bundle/vim-rake"]
+	path = bundle/vim-rake
+	url = https://github.com/tpope/vim-rake.git
