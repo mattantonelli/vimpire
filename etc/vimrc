@@ -121,7 +121,7 @@ elseif executable('ack')
   nnoremap <leader>a :Ack!<space>
   let g:ackhighlight=1
 else
-  echom 'Install ag or ack.'
+  echoe 'Install ag or ack to use the quick search.'
 endif
 
 " faster mapping for omni-completion
