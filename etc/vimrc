@@ -1,27 +1,77 @@
-" Turn off vi mode, we are using VIM!
+" turn off vi mode
 set nocompatible
+filetype off
 
-" Turn on pathogen, our plugin package manager.
-call pathogen#infect()
-" Run helptags to load docs from all the bundles.
-Helptags
+" set the runtime path to include vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" Turn on syntax highlighting.
-syntax on
+" begin setting up vundle
+Plugin 'gmarik/vundle.vim'
 
-" Change to the correct indention and plugins dependent on the file type.
+" dependencies
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tpope/vim-projectionist'
+Plugin 'tomtom/tlib_vim'
+
+" language plugins
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'rodjek/vim-puppet'
+Plugin 'tpope/vim-markdown'
+Plugin 'vim-perl/vim-perl'
+Plugin 'tpope/vim-haml'
+
+" ruby on rails tools
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+
+" vim helpers
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'kien/ctrlp.vim'
+
+" for quickly searching
+Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
+
+" color themes
+Plugin 'tpope/vim-vividchalk'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'twerth/ir_black'
+Plugin 'tomasr/molokai'
+
+" finish setting up vundle
+call vundle#end()
+
+" change to the correct indention and plugins dependent on the file type
 filetype on
 filetype indent on
 filetype plugin on
+syntax on
 
-" Turn on line numbers.
+" turn on line numbers
 set number
 
-" Turn on the visual bell.
+" turn on the visual bell
 set visualbell
 set noerrorbells
 
-" Tab Settings
+" tab settings
 set autoindent
 set smartindent
 set smarttab
@@ -31,16 +81,16 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 
-" Allow for cursor beyond last character.
+" allow for cursor beyond last character.
 set virtualedit=onemore
 
-" Store more history!
+" store more history
 set history=1000
 
-" Configure wildignore
+" configure wildignore
 set wildignore+=*/tmp/*,*.so,*.gz,*.swp,*.bak,*.pyc,*.class
 
-" When we turn on set list, we want to see these types of whitespace:
+" when we turn on set list, we want to see these types of whitespace:
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " smart case-sensitive searching
@@ -71,23 +121,23 @@ cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 cnoremap <C-d> <Del>
 
-" Wrapped lines go to next row not next line in file
+" wrapped lines go to next row not next line in file
 noremap <silent> j gj
 noremap <silent> k gk
 
-" Remap the leader key
+" remap the leader key
 let mapleader=','
 
-" Use \ to repeat find backwards.
+" use \ to repeat find backwards
 nnoremap <silent> \ ,
 
-" Save using sudo shortcut.
+" save using sudo shortcut
 cnoremap <silent> W :SudoWrite<CR>
 
-" Set up extra whitespace detection and stripping.
+" set up extra whitespace detection and stripping
 nnoremap <silent> <leader>W :StripWhitespace<CR>
 
-" Indent the whole file and return to the current line
+" indent the whole file and return to the current line
 nnoremap <silent> <leader>i gg=G''
 
 " grep the word under the cursor.
@@ -101,14 +151,14 @@ let g:ackhighlight=1
 nnoremap <leader>A :Ag!<space>
 let g:aghighlight=1
 
-" Generate ctags
+" generate ctags
 nnoremap <silent> <leader>t :silent !ctags -R --exclude=.git .<CR><C-l>
 
 " CtrlP shortcuts and settings
 nnoremap <silent> <leader>p :CtrlP<CR>
 nnoremap <silent> <leader>P :CtrlPTag<CR>
 
-" Set up The Silver Searcher
+" set up The Silver Searcher
 if executable('ag')
   " use ag instead of grep
   set grepprg=ag\ --nogroup\ --nocolor
@@ -119,39 +169,39 @@ if executable('ag')
   let g:ctrlp_use_caching=0
 endif
 
-" Faster mapping for omni-completion
+" faster mapping for omni-completion
 inoremap <silent> <S-Tab> <C-x><C-o>
 
-" Quickly edit/reload the vimrc file
+" quickly edit/reload the vimrc file
 nnoremap <silent> <leader>ev  :e $MYVIMRC<CR>
 nnoremap <silent> <leader>esv :vsplit<CR><C-w><C-w>:e $MYVIMRC<CR>
 nnoremap <silent> <leader>sv  :so $MYVIMRC<CR>
 
-" Quickly edit .zshrc
+" quickly edit .zshrc
 nnoremap <silent> <leader>ez :e ~/.zshrc<CR>
 nnoremap <silent> <leader>ezv :vsplit<CR><C-w><C-w>:e ~/.zshrc<CR>
 
-" Shortcuts for moving around split windows
+" shortcuts for moving around split windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Shortcuts for opening new split windows
+" shortcuts for opening new split windows
 nnoremap <silent> <leader>h :split<CR><C-w><C-w>
 nnoremap <silent> <leader>v :vsplit<CR><C-w><C-w>
 nnoremap <silent> <leader>w <C-w><C-w>
 nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>Q :q!<CR>
 
-" Shortcut to reloading last buffer
+" shortcut to reloading last buffer
 nnoremap <silent> <leader>b :b#<CR>
 
-" Insert blank line below or above without leaving normal mode
+" insert blank line below or above without leaving normal mode
 nnoremap <silent> <leader>o o<ESC>
 nnoremap <silent> <leader>O O<ESC>
 
-" Fugitive shortcuts
+" fugitive shortcuts
 nnoremap <leader>G :Git<space>
 nnoremap <silent> <leader>gl :Glog<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
@@ -160,10 +210,10 @@ nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gc :Gcommit<CR>
 nnoremap <silent> <leader>gr :Gread<CR>
 
-" Map Y to yank until EOL
+" map Y to yank until EOL
 nnoremap Y y$
 
-" Tired of hitting F1 accidentally?
+" tired of hitting F1 accidentally?
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
@@ -190,33 +240,33 @@ nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 " CtrlP Settings
 let g:ctrlp_custom_ignore = 'tags'
 
-" Syntastic Settings
+" syntastic settings
 let g:syntastic_ruby_checkers = ['mri']
 
-" vim-rspec Settings
+" vim-rspec settings
 nnoremap <silent> <leader>Tt :call RunCurrentSpecFile()<CR>
 nnoremap <silent> <leader>Ts :call RunNearestSpec()<CR>
 nnoremap <silent> <leader>Tl :call RunLastSpec()<CR>
 nnoremap <silent> <leader>Ta :call RunAllSpecs()<CR>
 
-" Persistent Undo
+" persistent undo
 if has('persistent_undo')
-  set undodir=~/.vim/undo//
+  set undodir=~/.vim/undo/
   set undofile
   set undolevels=1000
   set undoreload=10000
 endif
 
-" Put swap files in one location
-set directory=~/.vim/swap//
+" put swap files in one location
+set directory=~/.vim/swap/
 
-" Put all the backup files in one location
+" put all the backup files in one location
 set backup
 set writebackup
 set backupdir-=.
-set backupdir=~/.vim/backup//
+set backupdir=~/.vim/backup/
 
-" Configure how vim looks.
+" configure how vim looks
 colorscheme jellybeans
 
 " vim-ruby settings
@@ -226,9 +276,9 @@ let g:rubycomplete_classes_in_global=1
 let g:rubycomplete_rails=1
 let g:rubycomplete_load_gemfile=1
 
-" Make the GUI nice.
+" make the GUI nice
 if has('gui_running')
-  " Turn off the menu, tool, and scroll bar.
+  " turn off the menu, tool, and scroll bar
   set guioptions-=m
   set guioptions-=T
   set guioptions-=L
@@ -236,31 +286,30 @@ if has('gui_running')
   set guioptions-=r
   set guioptions-=R
 
-  " Increase the starting size of the editor.
+  " increase the starting size of the editor
   set lines=50
   set columns=140
 
-  " Make NERDTree look nice when using a GUI.
+  " make NERDTree look nice when using a GUI
   let NERDTreeDirArrows = 1
 
-  " Default to line and column highlighting.
+  " default to line and column highlighting
   set cursorline cursorcolumn
 
-  " Set up some decent fonts.
+  " set up some decent fonts
   if has("gui_win32")
     set guifont=Consolas:h10:cANSI
   elseif has("gui_macvim")
-    " set guifont=Menlo Regular:h15
     set guifont=Source\ Code\ Pro:h14
   endif
 endif
 
-" If tmux or screen is being used, default to 256 colors.
+" if tmux or screen is being used, default to 256 colors
 if &term == "screen"
   set t_Co=256
 end
 
-" Load a personal vimrc if one exists.
+" load a personal vimrc if one exists
 let s:personalrc = expand($HOME . '/.personal.vimrc')
 if filereadable(s:personalrc)
   exec ':so ' . s:personalrc
