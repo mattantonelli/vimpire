@@ -51,6 +51,12 @@ set autoread
 " remap ESC
 inoremap jj <ESC>
 
+" turn off the arrow keys but provide a nice message
+nnoremap <silent> <Left>  :echoe  'Left is "h".'<CR>
+nnoremap <silent> <Down>  :echoe  'Down is "j".'<CR>
+nnoremap <silent> <Up>    :echoe    'Up is "k".'<CR>
+nnoremap <silent> <Right> :echoe 'Right is "l".'<CR>
+
 " readline keybindings while in insert mode
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
