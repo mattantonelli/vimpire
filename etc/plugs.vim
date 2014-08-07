@@ -35,10 +35,14 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
+Plug 'Raimondi/delimitMate'
 
 " for quickly searching
-Plug 'mileszs/ack.vim'
-Plug 'rking/ag.vim'
+if executable('ag')
+  Plug 'rking/ag.vim'
+elseif executable('ack')
+  Plug 'mileszs/ack.vim'
+endif
 
 " color themes
 Plug 'tpope/vim-vividchalk'
