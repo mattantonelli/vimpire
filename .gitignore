@@ -5,4 +5,7 @@ Session.vim
 .netrwhist
 *~
 
-undo/%*
+plugged/
+backup/
+undo/
+swap/

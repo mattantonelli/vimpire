@@ -1,68 +1,16 @@
-" turn off vi mode
+" lose vi compatibility
 set nocompatible
-filetype off
 
-" set the runtime path to include vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" load the plugins
+silent! source ~/.vim/etc/plugs.vim
 
-" begin setting up vundle
-Plugin 'gmarik/vundle.vim'
-
-" dependencies
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tpope/vim-projectionist'
-Plugin 'tomtom/tlib_vim'
-
-" language plugins
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'rodjek/vim-puppet'
-Plugin 'tpope/vim-markdown'
-Plugin 'vim-perl/vim-perl'
-Plugin 'tpope/vim-haml'
-
-" ruby on rails tools
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
-
-" vim helpers
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'bling/vim-airline'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'kien/ctrlp.vim'
-
-" for quickly searching
-Plugin 'mileszs/ack.vim'
-Plugin 'rking/ag.vim'
-
-" color themes
-Plugin 'tpope/vim-vividchalk'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'twerth/ir_black'
-Plugin 'tomasr/molokai'
-
-" finish setting up vundle
-call vundle#end()
+" turn on syntax highlighting
+syntax on
 
 " change to the correct indention and plugins dependent on the file type
 filetype on
 filetype indent on
 filetype plugin on
-syntax on
 
 " turn on line numbers
 set number
