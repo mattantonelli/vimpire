@@ -79,6 +79,10 @@ let mapleader=','
 " use \ to repeat find backwards
 nnoremap <silent> \ ,
 
+" center screen when scrolling search results
+nnoremap n nzz
+nnoremap N Nzz
+
 " save using sudo shortcut
 cnoremap <silent> W :SudoWrite<CR>
 
@@ -91,14 +95,6 @@ nnoremap <silent> <leader>i gg=G''
 " grep the word under the cursor.
 nnoremap <silent> <leader>* :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-" Ack settings
-nnoremap <leader>a :Ack!<space>
-let g:ackhighlight=1
-
-" Ag settings
-nnoremap <leader>A :Ag!<space>
-let g:aghighlight=1
-
 " generate ctags
 nnoremap <silent> <leader>t :silent !ctags -R --exclude=.git .<CR><C-l>
 
@@ -106,7 +102,7 @@ nnoremap <silent> <leader>t :silent !ctags -R --exclude=.git .<CR><C-l>
 nnoremap <silent> <leader>p :CtrlP<CR>
 nnoremap <silent> <leader>P :CtrlPTag<CR>
 
-" set up The Silver Searcher
+" set up quick searching ag/ack
 if executable('ag')
   " use ag instead of grep
   set grepprg=ag\ --nogroup\ --nocolor
@@ -115,14 +111,27 @@ if executable('ag')
   let g:ctrlp_user_command='ag %s -l --nocolor -g ""'
   " ag is fast enough that we don't need the CtrlP cache
   let g:ctrlp_use_caching=0
+
+  " settings
+  nnoremap <leader>a :Ag!<space>
+  let g:aghighlight=1
+
+elseif executable('ack')
+  " settings
+  nnoremap <leader>a :Ack!<space>
+  let g:ackhighlight=1
+else
+  echom 'Install ag or ack.'
 endif
 
 " faster mapping for omni-completion
 inoremap <silent> <S-Tab> <C-x><C-o>
 
-" quickly edit/reload the vimrc file
+" quickly edit/reload the vimrc file or plugs file
 nnoremap <silent> <leader>ev  :e $MYVIMRC<CR>
+nnoremap <silent> <leader>ep  :e ~/.vim/etc/plugs.vim<CR>
 nnoremap <silent> <leader>esv :vsplit<CR><C-w><C-w>:e $MYVIMRC<CR>
+nnoremap <silent> <leader>esp :vsplit<CR><C-w><C-w>:e ~/.vim/etc/plugs.vim<CR>
 nnoremap <silent> <leader>sv  :so $MYVIMRC<CR>
 
 " quickly edit .zshrc
