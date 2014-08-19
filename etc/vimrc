@@ -138,8 +138,8 @@ endif
 " highlight all search pattern matches
 set hlsearch
 
-" clear highlighting by pressing ESC
-nnoremap <silent> <ESC> :nohl<CR><ESC>
+" clear highlighting and redraw the screen
+nnoremap <silent> <leader>l :redraw!<CR>:nohl<CR><ESC>
 
 " faster mapping for omni-completion
 inoremap <silent> <S-Tab> <C-x><C-o>
