@@ -48,8 +48,11 @@ set smartcase
 " auto-load files changed outside of vim
 set autoread
 
+" highlight all search pattern matches
+set hlsearch
+
 " remap ESC
-inoremap <silent> jj <ESC>:nohl<CR>
+inoremap <silent> jj <ESC>
 
 " turn off the arrow keys but provide a nice message
 nnoremap <silent> <Left>  :echoe  'Left is "h".'<CR>
@@ -135,9 +138,6 @@ else
   echoe 'Install ag or ack to use the quick search.'
 endif
 
-" highlight all search pattern matches
-set hlsearch
-
 " clear highlighting and redraw the screen
 nnoremap <silent> <leader>l :redraw!<CR>:nohl<CR><ESC>
 
@@ -155,6 +155,9 @@ nnoremap <silent> <leader>sv  :so $MYVIMRC<CR>
 nnoremap <silent> <leader>ez :e ~/.zshrc<CR>
 nnoremap <silent> <leader>ezv :vsplit<CR><C-w><C-w>:e ~/.zshrc<CR>
 
+" quickly write
+nnoremap <silent> <leader>w :write<CR>
+
 " shortcuts for moving around split windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -164,7 +167,6 @@ nnoremap <C-l> <C-w>l
 " shortcuts for opening new split windows
 nnoremap <silent> <leader>h :split<CR><C-w><C-w>
 nnoremap <silent> <leader>v :vsplit<CR><C-w><C-w>
-nnoremap <silent> <leader>w <C-w><C-w>
 nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>Q :q!<CR>
 
@@ -204,6 +206,9 @@ nnoremap <silent> <F9> :set list!<CR>
 " F10 to Toggle highlighting the current line and column.
 nnoremap <silent> <F10> :set cursorline!<CR>:set cursorcolumn!<CR>
 
+" GitGutter Settings
+let g:gitgutter_map_keys = 0
+
 " NERDTree Settings
 let NERDTreeMinimalUI  = 1
 let NERDTreeDirArrows  = 0
@@ -216,6 +221,7 @@ let g:ctrlp_custom_ignore = 'tags'
 
 " syntastic settings
 let g:syntastic_ruby_checkers = ['mri']
+let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["java"] }
 
 " vim-rspec settings
 nnoremap <silent> <leader>Tt :call RunCurrentSpecFile()<CR>
@@ -244,11 +250,12 @@ set backupdir=~/.vim/backup/
 colorscheme jellybeans
 
 " vim-ruby settings
-let ruby_operators=1
-let g:rubycomplete_buffer_loading=1
-let g:rubycomplete_classes_in_global=1
-let g:rubycomplete_rails=1
-let g:rubycomplete_load_gemfile=1
+let ruby_operators = 1
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+let g:rubycomplete_load_gemfile = 1
+let g:rubycomplete_use_bundler = 1
 
 " make the GUI nice
 if has('gui_running')
