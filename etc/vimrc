@@ -119,6 +119,9 @@ nnoremap <silent> <leader>p :CtrlP<CR>
 nnoremap <silent> <leader>P :CtrlPTag<CR>
 nnoremap <silent> <leader>b :CtrlPBuffer<CR>
 
+" Open this file's directory using netrw in a split.
+nnoremap <silent> <C-n> :vsplit<CR><C-W><C-W>:edit %:p:h<CR>
+
 " set up quick searching ag/ack
 if executable('ag')
   " use ag instead of grep
