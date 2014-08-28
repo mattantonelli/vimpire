@@ -208,13 +208,6 @@ nnoremap <silent> <F10> :set cursorline!<CR>:set cursorcolumn!<CR>
 " GitGutter Settings
 let g:gitgutter_map_keys = 0
 
-" NERDTree Settings
-let NERDTreeMinimalUI  = 1
-let NERDTreeDirArrows  = 0
-let g:NERDTreeWinSize  = 30
-let NERDTreeQuitOnOpen = 1
-nnoremap <silent> <C-n> :NERDTreeToggle<CR>
-
 " CtrlP Settings
 let g:ctrlp_custom_ignore = 'tags'
 
@@ -269,9 +262,6 @@ if has('gui_running')
   " increase the starting size of the editor
   set lines=50
   set columns=140
-
-  " make NERDTree look nice when using a GUI
-  let NERDTreeDirArrows = 1
 
   " default to line and column highlighting
   set cursorline cursorcolumn
