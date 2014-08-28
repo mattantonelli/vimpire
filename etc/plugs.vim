@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin($HOME . '/.vim/plugged')
 
 " dependencies
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -21,7 +21,6 @@ Plug 'tpope/vim-rake'
 
 " vim helpers
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
@@ -34,6 +33,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar'
 Plug 'kien/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 
