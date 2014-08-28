@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin($HOME . '/.vim/plugged')
 
 " dependencies
 Plug 'MarcWeber/vim-addon-mw-utils'

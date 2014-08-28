@@ -1,8 +1,13 @@
 " lose vi compatibility
 set nocompatible
 
+" use ~/.vim for windows too
+if (has('win16') || has('win32') || has('win64'))
+  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
+endif
+
 " load the plugins
-silent! source ~/.vim/etc/plugs.vim
+silent! source $HOME/.vim/etc/plugs.vim
 
 " turn on syntax highlighting
 syntax on
@@ -97,11 +102,8 @@ nnoremap <silent> \ ,
 nnoremap n nzz
 nnoremap N Nzz
 
-" save using sudo shortcut
-cnoremap <silent> W :SudoWrite<CR>
-
 " set up extra whitespace detection and stripping
-nnoremap <silent> <leader>W :StripWhitespace<CR>
+nnoremap <silent> <leader>sw :StripWhitespace<CR>
 
 " indent the whole file and return to the current line
 nnoremap <silent> <leader>i gg=G''
@@ -135,8 +137,6 @@ elseif executable('ack')
   " settings
   nnoremap <leader>a :Ack!<space>
   let g:ackhighlight=1
-else
-  echoe 'Install ag or ack to use the quick search.'
 endif
 
 " clear highlighting and redraw the screen
@@ -158,6 +158,7 @@ nnoremap <silent> <leader>ezv :vsplit<CR><C-w><C-w>:e ~/.zshrc<CR>
 
 " quickly write
 nnoremap <silent> <leader>w :write<CR>
+nnoremap <silent> <leader>W :SudoWrite<CR>
 
 " shortcuts for moving around split windows
 nnoremap <C-h> <C-w>h
@@ -170,7 +171,6 @@ nnoremap <silent> <leader>h :split<CR><C-w><C-w>
 nnoremap <silent> <leader>v :vsplit<CR><C-w><C-w>
 nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>Q :q!<CR>
-
 
 " insert blank line below or above without leaving normal mode
 nnoremap <silent> <leader>o o<ESC>
@@ -230,20 +230,20 @@ nnoremap <silent> <leader>Ta :call RunAllSpecs()<CR>
 
 " persistent undo
 if has('persistent_undo')
-  set undodir=~/.vim/undo/
+  set undodir=$HOME/.vim/undo/
   set undofile
   set undolevels=1000
   set undoreload=10000
 endif
 
 " put swap files in one location
-set directory=~/.vim/swap/
+set directory=$HOME/.vim/swap/
 
 " put all the backup files in one location
 set backup
 set writebackup
 set backupdir-=.
-set backupdir=~/.vim/backup/
+set backupdir=$HOME/.vim/backup/
 
 " configure how vim looks
 colorscheme jellybeans
