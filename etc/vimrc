@@ -248,6 +248,9 @@ set writebackup
 set backupdir-=.
 set backupdir=$HOME/.vim/backup/
 
+" put the viminfo file in ~/.vim
+set viminfo+=n$HOME/.vim/.viminfo
+
 " configure how vim looks
 colorscheme jellybeans
 
