@@ -126,6 +126,8 @@ nnoremap <silent> <C-n> :vsplit<CR><C-W><C-W>:edit %:p:h<CR>
 " Default to searching with very magic regex
 nnoremap / /\v
 nnoremap ? ?\v
+vnoremap / /\v
+vnoremap ? ?\v
 
 " set up quick searching ag/ack
 if executable('ag')
