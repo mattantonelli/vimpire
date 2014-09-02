@@ -65,6 +65,7 @@ nnoremap <silent> <Down>  :echoe  'Down is "j".'<CR>
 nnoremap <silent> <Up>    :echoe    'Up is "k".'<CR>
 nnoremap <silent> <Right> :echoe 'Right is "l".'<CR>
 
+" turn the arrow keys off in insert mode too
 inoremap <Left>  <nop>
 inoremap <Down>  <nop>
 inoremap <Up>    <nop>
@@ -99,8 +100,8 @@ let mapleader=','
 nnoremap <silent> \ ,
 
 " center screen when scrolling search results
-nnoremap n nzz
-nnoremap N Nzz
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
 
 " set up extra whitespace detection and stripping
 nnoremap <silent> <leader>sw :StripWhitespace<CR>
@@ -121,6 +122,10 @@ nnoremap <silent> <leader>b :CtrlPBuffer<CR>
 
 " Open this file's directory using netrw in a split.
 nnoremap <silent> <C-n> :vsplit<CR><C-W><C-W>:edit %:p:h<CR>
+
+" Default to searching with very magic regex
+nnoremap / /\v
+nnoremap ? ?\v
 
 " set up quick searching ag/ack
 if executable('ag')
