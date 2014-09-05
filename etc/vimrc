@@ -56,6 +56,26 @@ set autoread
 " highlight all search pattern matches
 set hlsearch
 
+" persistent undo
+if has('persistent_undo')
+  set undodir=$HOME/.vim/undo/
+  set undofile
+  set undolevels=1000
+  set undoreload=10000
+endif
+
+" put swap files in one location
+set directory=$HOME/.vim/swap/
+
+" put all the backup files in one location
+set backup
+set writebackup
+set backupdir-=.
+set backupdir=$HOME/.vim/backup/
+
+" put the viminfo file in ~/.vim
+set viminfo+=n$HOME/.vim/.viminfo
+
 " remap ESC
 inoremap <silent> jj <ESC>
 
@@ -245,26 +265,6 @@ nnoremap <silent> <leader>Rc :call RunCurrentSpecFile()<CR>
 nnoremap <silent> <leader>Rn :call RunNearestSpec()<CR>
 nnoremap <silent> <leader>Rl :call RunLastSpec()<CR>
 nnoremap <silent> <leader>Ra :call RunAllSpecs()<CR>
-
-" persistent undo
-if has('persistent_undo')
-  set undodir=$HOME/.vim/undo/
-  set undofile
-  set undolevels=1000
-  set undoreload=10000
-endif
-
-" put swap files in one location
-set directory=$HOME/.vim/swap/
-
-" put all the backup files in one location
-set backup
-set writebackup
-set backupdir-=.
-set backupdir=$HOME/.vim/backup/
-
-" put the viminfo file in ~/.vim
-set viminfo+=n$HOME/.vim/.viminfo
 
 " configure how vim looks
 colorscheme jellybeans
