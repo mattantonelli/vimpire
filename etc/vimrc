@@ -76,15 +76,19 @@ set backupdir=$HOME/.vim/backup/
 " put the viminfo file in ~/.vim
 set viminfo+=n$HOME/.vim/.viminfo
 
+" configure a custom spellfile
+set spellfile=$HOME/.vim-spell-en.utf-8.add
+
+" configure vim split behavior
+set splitbelow
+set splitright
+
 " set up file specific settings
 augroup file_specific_settings
   autocmd!
   autocmd FileType markdown setlocal spell
   autocmd FileType gitcommit setlocal spell
 augroup END
-
-" configure a custom spellfile
-set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " remap ESC
 inoremap <silent> jj <ESC>
