@@ -112,18 +112,33 @@ nnoremap <silent> <leader>i gg=G''
 " grep the word under the cursor.
 nnoremap <silent> <leader>* :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+" set the tags location
+set tags+=./.git/tags
+
 " generate ctags
-nnoremap <silent> <leader>t :silent !ctags -R --exclude=.git .<CR><C-l>
+function! GenerateCtags()
+  let l:git_directory = fugitive#extract_git_dir(getcwd())
+  if isdirectory(l:git_directory)
+    let l:cmd = 'ctags --tag-relative --recurse --exclude=.git -f ' . l:git_directory . '/tags .'
+    let l:results = system(l:cmd)
+  endif
+endfunction
+
+" map the GenerateCtags function
+nnoremap <silent> <leader>T :call GenerateCtags()<CR>
+
+" mappings for TagBar
+nnoremap <silent> <leader>t :TagbarToggle<CR>
 
 " CtrlP shortcuts and settings
 nnoremap <silent> <leader>p :CtrlP<CR>
 nnoremap <silent> <leader>P :CtrlPTag<CR>
 nnoremap <silent> <leader>b :CtrlPBuffer<CR>
 
-" Open this file's directory using netrw in a split.
+" open this file's directory using netrw in a split.
 nnoremap <silent> <C-n> :vsplit<CR><C-W><C-W>:edit %:p:h<CR>
 
-" Default to searching with very magic regex
+" default to searching with very magic regex
 nnoremap / /\v
 nnoremap ? ?\v
 vnoremap / /\v
@@ -221,15 +236,15 @@ let g:gitgutter_map_keys = 0
 " CtrlP Settings
 let g:ctrlp_custom_ignore = 'tags'
 
-" syntastic settings
+" Syntastic settings
 let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["java"] }
 
 " vim-rspec settings
-nnoremap <silent> <leader>Tt :call RunCurrentSpecFile()<CR>
-nnoremap <silent> <leader>Ts :call RunNearestSpec()<CR>
-nnoremap <silent> <leader>Tl :call RunLastSpec()<CR>
-nnoremap <silent> <leader>Ta :call RunAllSpecs()<CR>
+nnoremap <silent> <leader>Rc :call RunCurrentSpecFile()<CR>
+nnoremap <silent> <leader>Rn :call RunNearestSpec()<CR>
+nnoremap <silent> <leader>Rl :call RunLastSpec()<CR>
+nnoremap <silent> <leader>Ra :call RunAllSpecs()<CR>
 
 " persistent undo
 if has('persistent_undo')
