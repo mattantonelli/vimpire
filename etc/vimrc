@@ -86,6 +86,9 @@ set splitright
 " configure wildmode completion
 set wildmode=longest,list:longest
 
+" set the tags location
+set tags+=./.git/tags
+
 " set up file specific settings
 augroup file_specific_settings
   autocmd!
@@ -131,6 +134,9 @@ nnoremap <silent> \ ,
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 
+" change the current working directory to the current file's location
+nnoremap <silent> <leader>cd :cd %:p:h<CR>:pwd<CR>
+
 " set up extra whitespace detection and stripping
 nnoremap <silent> <leader>sw :StripWhitespace<CR>
 
@@ -139,9 +145,6 @@ nnoremap <silent> <leader>i gg=G''
 
 " grep the word under the cursor.
 nnoremap <silent> <leader>* :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-" set the tags location
-set tags+=./.git/tags
 
 " generate ctags
 function! GenerateCtags()
