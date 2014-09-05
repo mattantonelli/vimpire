@@ -36,6 +36,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'kien/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
+Plug 'majutsushi/tagbar'
 
 " for quickly searching
 if executable('ag')
