@@ -83,6 +83,9 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 set splitbelow
 set splitright
 
+" configure wildmode completion
+set wildmode=longest,list:longest
+
 " set up file specific settings
 augroup file_specific_settings
   autocmd!
@@ -105,16 +108,7 @@ inoremap <Down>  <nop>
 inoremap <Up>    <nop>
 inoremap <Right> <nop>
 
-" readline keybindings while in insert mode
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
-inoremap <C-f> <Right>
-inoremap <C-b> <Left>
-inoremap <C-p> <Up>
-inoremap <C-n> <Down>
-inoremap <C-d> <Del>
-
-" and command mode
+" readline abilities in command mode
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-f> <Right>
