@@ -28,6 +28,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
+Plug 'kien/ctrlp.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'majutsushi/tagbar'
+
+" tpope
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -36,9 +41,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-ragtag'
-Plug 'kien/ctrlp.vim'
-Plug 'Raimondi/delimitMate'
-Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-unimpaired'
 
 " for quickly searching
 if executable('ag')
