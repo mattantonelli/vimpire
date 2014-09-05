@@ -11,6 +11,7 @@ Plug 'rodjek/vim-puppet'
 Plug 'tpope/vim-markdown'
 Plug 'vim-perl/vim-perl'
 Plug 'tpope/vim-haml'
+Plug 'elixir-lang/vim-elixir'
 
 " ruby on rails tools
 Plug 'thoughtbot/vim-rspec'
