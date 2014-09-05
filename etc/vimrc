@@ -76,6 +76,13 @@ set backupdir=$HOME/.vim/backup/
 " put the viminfo file in ~/.vim
 set viminfo+=n$HOME/.vim/.viminfo
 
+" set up file specific settings
+augroup file_specific_settings
+  autocmd!
+  autocmd FileType markdown setlocal spell
+  autocmd FileType gitcommit setlocal spell
+augroup END
+
 " remap ESC
 inoremap <silent> jj <ESC>
 
