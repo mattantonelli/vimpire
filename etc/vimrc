@@ -186,6 +186,8 @@ if executable('ag')
   let g:aghighlight=1
 
 elseif executable('ack')
+  " use ack instead of grep
+  set grepprg=ack\ --nocolor
   " settings
   nnoremap <leader>a :Ack!<space>
   let g:ackhighlight=1
