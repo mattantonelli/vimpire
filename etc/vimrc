@@ -271,9 +271,6 @@ nnoremap <silent> <leader>Rn :call RunNearestSpec()<CR>
 nnoremap <silent> <leader>Rl :call RunLastSpec()<CR>
 nnoremap <silent> <leader>Ra :call RunAllSpecs()<CR>
 
-" configure how vim looks
-colorscheme jellybeans
-
 " vim-ruby settings
 let ruby_operators = 1
 let g:rubycomplete_buffer_loading = 1
@@ -281,6 +278,9 @@ let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
 let g:rubycomplete_load_gemfile = 1
 let g:rubycomplete_use_bundler = 1
+
+" configure how vim looks
+colorscheme jellybeans
 
 " make the GUI nice
 if has('gui_running')
