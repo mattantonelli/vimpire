@@ -32,6 +32,7 @@ Plug 'honza/vim-snippets'
 Plug 'kien/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
+Plug 'junegunn/vim-easy-align'
 
 " tpope
 Plug 'tpope/vim-commentary'

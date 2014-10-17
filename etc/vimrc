@@ -162,6 +162,10 @@ nnoremap <silent> <leader>p :CtrlP<CR>
 nnoremap <silent> <leader>P :CtrlPTag<CR>
 nnoremap <silent> <leader>b :CtrlPBuffer<CR>
 
+" Easy Align keymaps
+vmap <silent> <CR> <Plug>(EasyAlign)
+nmap <silent> <leader>ea <Plug>(EasyAlign)
+
 " open this file's directory using netrw in a split.
 nnoremap <silent> <C-n> :vsplit<CR><C-W><C-W>:edit %:p:h<CR>
 
