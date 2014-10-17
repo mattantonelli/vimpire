@@ -23,7 +23,7 @@ Plug 'tpope/vim-rake'
 
 " vim helpers
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic', { 'tag': 'f180e28a386f2362c92e2c05380ebfe5b4e2ad30' }
 Plug 'Lokaltog/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
