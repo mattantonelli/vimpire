@@ -169,11 +169,21 @@ nmap <silent> <leader>ea <Plug>(EasyAlign)
 " open this file's directory using netrw in a split.
 nnoremap <silent> <C-n> :vsplit<CR><C-W><C-W>:edit %:p:h<CR>
 
-" default to searching with very magic regex
-nnoremap / /\v
-nnoremap ? ?\v
-vnoremap / /\v
-vnoremap ? ?\v
+" Incremental search settings
+let g:incsearch#auto_nohlsearch = 1
+let g:incsearch#consistent_n_direction = 1
+let g:incsearch#magic = '\v'
+
+" Incremental search mappings
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
 
 " set up quick searching ag/ack
 if executable('ag')
