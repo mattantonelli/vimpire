@@ -33,6 +33,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/vim-easy-align'
+Plug 'haya14busa/incsearch.vim'
 
 " tpope
 Plug 'tpope/vim-commentary'
