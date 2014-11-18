@@ -138,6 +138,9 @@ nnoremap <silent> <leader>i gg=G''
 " grep the word under the cursor.
 nnoremap <silent> <leader>* :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+" add a fast mapping to the last buffer command
+nnoremap <silent> <leader>. <C-^>
+
 " generate ctags
 function! GenerateCtags()
   let l:git_directory = fugitive#extract_git_dir(getcwd())
