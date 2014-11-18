@@ -13,6 +13,7 @@ Plug 'vim-perl/vim-perl'
 Plug 'tpope/vim-haml'
 Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go'
+Plug 'Valloric/MatchTagAlways'
 
 " ruby on rails tools
 Plug 'thoughtbot/vim-rspec'
