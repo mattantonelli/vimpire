@@ -297,6 +297,16 @@ let g:rubycomplete_rails = 1
 let g:rubycomplete_load_gemfile = 1
 let g:rubycomplete_use_bundler = 1
 
+" rails.vim key bindings
+nnoremap <leader>rM :Emodel<space>
+nnoremap <leader>rC :Econtroller<space>
+nnoremap <leader>rV :Eview<space>
+nnoremap <leader>rH :Ehelper<space>
+nnoremap <silent> <leader>rm :Emodel<CR>
+nnoremap <silent> <leader>rc :Econtroller<CR>
+nnoremap <silent> <leader>rv :Eview<CR>
+nnoremap <silent> <leader>rh :Ehelper<CR>
+
 " configure how vim looks
 colorscheme jellybeans
 
