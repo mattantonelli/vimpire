@@ -307,8 +307,22 @@ nnoremap <silent> <leader>rc :Econtroller<CR>
 nnoremap <silent> <leader>rv :Eview<CR>
 nnoremap <silent> <leader>rh :Ehelper<CR>
 
-" configure how vim looks
-colorscheme jellybeans
+" use a dark background
+set background=dark
+
+" turn off italics in the console
+if !has("gui_running")
+  let g:gruvbox_italic=0
+endif
+
+let g:gruvbox_invert_signs=0
+
+" increase the contrast in dark mode
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='medium'
+
+" set the colorscheme gruvbox
+colorscheme gruvbox
 
 " make the GUI nice
 if has('gui_running')

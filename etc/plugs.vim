@@ -22,6 +22,9 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 
+" node.js tools
+Plug 'moll/vim-node'
+
 " vim helpers
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/syntastic'
@@ -55,9 +58,8 @@ elseif executable('ack')
 endif
 
 " color themes
-Plug 'tpope/vim-vividchalk'
 Plug 'nanotech/jellybeans.vim'
-Plug 'twerth/ir_black'
 Plug 'tomasr/molokai'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
