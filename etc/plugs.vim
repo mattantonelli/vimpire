@@ -25,6 +25,10 @@ Plug 'tpope/vim-rake'
 " node.js tools
 Plug 'moll/vim-node'
 
+" user text objects
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
+
 " vim helpers
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/syntastic'
