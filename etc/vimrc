@@ -244,12 +244,11 @@ nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>Q :q!<CR>
 
 " fugitive shortcuts
-nnoremap <leader>G :Git<space>
 nnoremap <silent> <leader>gl :Glog<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>
 nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gc :Gcommit -v<CR>
 nnoremap <silent> <leader>gr :Gread<CR>
 
 " map Y to yank until EOL
