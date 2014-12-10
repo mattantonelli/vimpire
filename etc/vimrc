@@ -318,8 +318,6 @@ if !has("gui_running")
   let g:gruvbox_italic=0
 endif
 
-let g:gruvbox_invert_signs=0
-
 " increase the contrast in dark mode
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='medium'
