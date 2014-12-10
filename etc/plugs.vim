@@ -15,14 +15,14 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go'
 Plug 'Valloric/MatchTagAlways'
 
-" ruby on rails tools
+" ruby on rails
 Plug 'thoughtbot/vim-rspec'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 
-" node.js tools
+" node.js
 Plug 'moll/vim-node'
 
 " user text objects
@@ -42,6 +42,8 @@ Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/vim-easy-align'
 Plug 'haya14busa/incsearch.vim'
+Plug 'terryma/vim-expand-region'
+Plug 'mtth/scratch.vim'
 
 " tpope
 Plug 'tpope/vim-commentary'
@@ -54,7 +56,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-unimpaired'
 
-" for quickly searching
+" quick searching
 if executable('ag')
   Plug 'rking/ag.vim'
 elseif executable('ack')
