@@ -92,6 +92,10 @@ augroup file_specific_settings
   autocmd FileType gitcommit setlocal spell
 augroup END
 
+" disable automatic commenting
+autocmd FileType * setlocal formatoptions-=cro
+set formatoptions-=cro
+
 " remap ESC
 inoremap <silent> jj <ESC>
 
