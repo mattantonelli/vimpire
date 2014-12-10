@@ -300,15 +300,15 @@ let g:rubycomplete_rails = 1
 let g:rubycomplete_load_gemfile = 1
 let g:rubycomplete_use_bundler = 1
 
-" rails.vim key bindings
-nnoremap <leader>rM :Emodel<space>
-nnoremap <leader>rC :Econtroller<space>
-nnoremap <leader>rV :Eview<space>
-nnoremap <leader>rH :Ehelper<space>
-nnoremap <silent> <leader>rm :Emodel<CR>
-nnoremap <silent> <leader>rc :Econtroller<CR>
-nnoremap <silent> <leader>rv :Eview<CR>
-nnoremap <silent> <leader>rh :Ehelper<CR>
+" rails key bindings
+nnoremap <leader>rm :CtrlP app/models<CR>
+nnoremap <leader>rc :CtrlP app/controllers<CR>
+nnoremap <leader>rv :CtrlP app/views<CR>
+nnoremap <leader>rh :CtrlP app/helpers<CR>
+nnoremap <silent> <leader>rM :Emodel<CR>
+nnoremap <silent> <leader>rC :Econtroller<CR>
+nnoremap <silent> <leader>rV :Eview<CR>
+nnoremap <silent> <leader>rH :Ehelper<CR>
 
 " use a dark background
 set background=dark
