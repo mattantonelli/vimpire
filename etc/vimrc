@@ -221,7 +221,7 @@ nnoremap <silent> <leader>ev  :e $MYVIMRC<CR>
 nnoremap <silent> <leader>ep  :e ~/.vim/etc/plugs.vim<CR>
 nnoremap <silent> <leader>esv :vsplit<CR><C-w><C-w>:e $MYVIMRC<CR>
 nnoremap <silent> <leader>esp :vsplit<CR><C-w><C-w>:e ~/.vim/etc/plugs.vim<CR>
-nnoremap <silent> <leader>sv  :so $MYVIMRC<CR>
+nnoremap <silent> <leader>sv  :so $MYVIMRC<CR>:nohl<CR>
 
 " quickly edit .zshrc
 nnoremap <silent> <leader>ez :e ~/.zshrc<CR>
