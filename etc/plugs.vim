@@ -24,6 +24,7 @@ Plug 'tpope/vim-rake'
 
 " node.js
 Plug 'moll/vim-node'
+Plug 'kchmck/vim-coffee-script'
 
 " user text objects
 Plug 'kana/vim-textobj-user'
