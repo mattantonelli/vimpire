@@ -45,6 +45,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'haya14busa/incsearch.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'mtth/scratch.vim'
+Plug 'terryma/vim-multiple-cursors'
 
 " tpope
 Plug 'tpope/vim-commentary'
