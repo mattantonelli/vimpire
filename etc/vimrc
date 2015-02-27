@@ -124,6 +124,10 @@ cnoremap <C-d> <Del>
 noremap <silent> j gj
 noremap <silent> k gk
 
+" move visual selections up and down
+vnoremap <silent> J :m '>+1<CR>gv=gv
+vnoremap <silent> K :m '<-2<CR>gv=gv
+
 " remap the leader key
 let mapleader=','
 
