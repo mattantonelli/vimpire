@@ -68,6 +68,6 @@ endif
 " color themes
 Plug 'nanotech/jellybeans.vim'
 Plug 'tomasr/molokai'
-Plug 'morhetz/gruvbox'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()

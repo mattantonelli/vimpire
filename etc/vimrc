@@ -313,17 +313,9 @@ nnoremap <silent> <leader>rH :Ehelper<CR>
 " use a dark background
 set background=dark
 
-" turn off italics in the console
-if !has("gui_running")
-  let g:gruvbox_italic=0
-endif
-
-" increase the contrast in dark mode
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_contrast_light='medium'
-
-" set the colorscheme gruvbox
-colorscheme gruvbox
+" set the colorscheme base16
+let base16colorspace=256
+colorscheme base16-ocean
 
 " make the GUI nice
 if has('gui_running')
