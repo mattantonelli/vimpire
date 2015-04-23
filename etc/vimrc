@@ -99,6 +99,10 @@ set formatoptions-=cro
 " remap ESC
 inoremap <silent> jj <ESC>
 
+" minimize the ESC delay
+set timeoutlen=1000
+set ttimeoutlen=0
+
 " turn off the arrow keys but provide a nice message
 nnoremap <silent> <Left>  :echoe  'Left is "h".'<CR>
 nnoremap <silent> <Down>  :echoe  'Down is "j".'<CR>
