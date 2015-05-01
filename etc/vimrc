@@ -291,9 +291,9 @@ let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["java"] }
 
 " vim-rspec settings
 if filereadable(getcwd() . "/bin/rspec")
-  let g:rspec_command = "!bundle exec spring rspec {spec}"
+  let g:rspec_command = "Dispatch bundle exec spring rspec {spec}"
 else
-  let g:rspec_command = "!bundle exec rspec {spec}"
+  let g:rspec_command = "Dispatch bundle exec rspec {spec}"
 endif
 nnoremap <silent> <leader>Rc :call RunCurrentSpecFile()<CR>
 nnoremap <silent> <leader>Rn :call RunNearestSpec()<CR>
