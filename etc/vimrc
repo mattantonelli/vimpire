@@ -235,6 +235,11 @@ nnoremap <silent> <leader>sv  :so $MYVIMRC<CR>:nohl<CR>
 nnoremap <silent> <leader>ez :e ~/.zshrc<CR>
 nnoremap <silent> <leader>ezv :vsplit<CR><C-w><C-w>:e ~/.zshrc<CR>
 
+" quickly edit .tmux.conf
+
+nnoremap <silent> <leader>et :e ~/.tmux.conf<CR>
+nnoremap <silent> <leader>etv :vsplit<CR><C-w><C-w>:e ~/.tmux.conf<CR>
+
 " quickly write
 nnoremap <silent> <leader>w :write<CR>
 nnoremap <silent> <leader>W :SudoWrite<CR>
