@@ -6,13 +6,12 @@ Plug 'tpope/vim-projectionist'
 Plug 'tomtom/tlib_vim'
 
 " language plugins
-Plug 'jelera/vim-javascript-syntax'
 Plug 'rodjek/vim-puppet'
 Plug 'tpope/vim-markdown'
 Plug 'vim-perl/vim-perl'
-Plug 'tpope/vim-haml'
 Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go'
+Plug 'moll/vim-node'
 
 " ruby on rails
 Plug 'thoughtbot/vim-rspec'
@@ -21,9 +20,14 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 
-" node.js
-Plug 'moll/vim-node'
+" front end web development
+Plug 'jelera/vim-javascript-syntax'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'elzr/vim-json'
 Plug 'kchmck/vim-coffee-script'
+Plug 'burnettk/vim-angular'
+Plug 'othree/html5.vim'
+Plug 'tpope/vim-haml'
 
 " user text objects
 Plug 'kana/vim-textobj-user'
