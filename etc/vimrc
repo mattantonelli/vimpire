@@ -211,7 +211,7 @@ if executable('ag')
 
   " settings
   nnoremap <leader>a :Ag!<space>
-  let g:aghighlight=1
+  let g:ag_highlight=1
 
 elseif executable('ack')
   " use ack instead of grep
