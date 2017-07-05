@@ -98,22 +98,11 @@ set formatoptions-=cro
 
 " remap ESC
 inoremap <silent> jj <ESC>
+inoremap <silent> kk <ESC>
 
 " minimize the ESC delay
 set timeoutlen=1000
 set ttimeoutlen=0
-
-" turn off the arrow keys but provide a nice message
-nnoremap <silent> <Left>  :echoe  'Left is "h".'<CR>
-nnoremap <silent> <Down>  :echoe  'Down is "j".'<CR>
-nnoremap <silent> <Up>    :echoe    'Up is "k".'<CR>
-nnoremap <silent> <Right> :echoe 'Right is "l".'<CR>
-
-" turn the arrow keys off in insert mode too
-inoremap <Left>  <nop>
-inoremap <Down>  <nop>
-inoremap <Up>    <nop>
-inoremap <Right> <nop>
 
 " readline abilities in command mode
 cnoremap <C-a> <Home>
@@ -329,9 +318,8 @@ nnoremap <silent> <leader>rH :Ehelper<CR>
 " use a dark background
 set background=dark
 
-" set the colorscheme base16
-let base16colorspace=256
-colorscheme base16-ocean
+" set the colorscheme jellybeans
+colorscheme jellybeans
 
 " make the GUI nice
 if has('gui_running')
@@ -362,6 +350,19 @@ endif
 if &term == "screen"
   set t_Co=256
 end
+
+" airline symbol compatibility
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.paste = 'PASTE'
+let g:airline_symbols.notexists = ''
+let g:airline_symbols.readonly = ''
 
 " load a personal vimrc if one exists
 let s:personalrc = expand($HOME . '/.personal.vimrc')
