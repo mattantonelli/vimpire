@@ -44,7 +44,7 @@ mv ~/.vimrc ~/.vimrc-backup && mv ~/.vim ~/.vim-backup
 
 Clone the repository:
 ```bash
-git clone --recursive https://github.com/ATNI/vimpire.git ~/.vim
+git clone --recursive https://github.com/mattantonelli/vimpire.git ~/.vim
 ```
 
 Symlink the Vimpire vimrc file into place:
